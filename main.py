@@ -2,7 +2,7 @@ import telebot
 import parce
 
 print("Telegram bot by Prokin\nЗагружает с ютуб канала последнее видео\nVersion 0.0.2")
-bot = telebot.TeleBot("1869428360:AAGb4_tSe7Fy8Agg2IdK4sNfpbNsV8wOLWM")
+bot = telebot.TeleBot("ТУТ УКАЗЫВАЕТСЯ ВАШ ТОКЕН")
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
