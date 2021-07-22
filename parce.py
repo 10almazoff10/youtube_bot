@@ -2,29 +2,10 @@ from os import write
 from bs4 import BeautifulSoup as BS
 from selenium import webdriver
 from pytube import YouTube, Channel
-import requests, time, os
+import requests, os
 
 
 URL = "https://www.youtube.com/results?search_query="
-HEADERS = {"user-agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36", "accept" : "*/*"}
-
-
-def get_html(url, params=None):
-    r = requests.get(url, headers=HEADERS, params=params)
-    return r
-
-#def get_video(url):
-#    driver = webdriver.Chrome()
-#    driver.get(url)  # Можно ждать до загрузки страницы, но проще подождать 10 секунд, их хватит с запасом
-#    html = driver.page_source
-#    soup = BS(html, "html.parser")
-#    link = "https://www.youtube.com" + soup.find("a", class_="yt-simple-endpoint inline-block style-scope ytd-thumbnail").get("href")
-#
-#
-#    yt.streams.get_by_itag(22).download("video", filename=yt.title)
-#
-#    return yt.title
-
 
 def get_content(html):
     data = []
@@ -84,7 +65,3 @@ def parse(name):
     print("check page")
     data = get_content(html)
     return data
-
-#parse("Droider")
-
-#<img id="img" class="style-scope yt-img-shadow" alt="" height="136" width="136" src="//yt3.ggpht.com/ytc/AKedOLRCpXDeP7nK8rFX-tHHRVkpRtQHk0fpwKx5SRCaLA=s176-c-k-c0x00ffffff-no-rj-mo">
